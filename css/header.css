@@ -1,0 +1,249 @@
+@import url(reset.css);
+@import url(font.css);
+
+header{
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  background-color: rgb(255, 255, 255, 0.8);
+  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+nav{
+  width: 1200px;
+  height: inherit;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav h1 img{
+  width: 70%;
+  padding-top: 10px;
+}
+ul.gnb{
+  height: inherit;
+  display: flex;
+  position: relative;
+}
+.gnb>.main{
+  width: 200px;
+  position: relative;
+}
+.gnb>.main>a{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  color: #222;
+  font-family: GmS_M, sans-serif;
+  font-size: 17px;
+}
+.gnb>.main:hover>a{
+  color:#ff9100;
+  text-shadow: 1px 1px 5px rgb(225, 239, 218, 0.5);
+}
+.gnb:before{
+  content:"";
+  width: 800px;
+  position: absolute;
+  top: 99%;
+  left: 0;
+}
+.gnb:after{
+  content:"";
+  background: url(../image/leaf-01.png) no-repeat center/100%;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 17px;
+  right: -50px;
+  opacity: 0.8;
+}
+
+/* Sub Menu */
+.sub{
+  display: none;
+  position: absolute;
+  z-index: 900;
+  width: 100%;
+  height: 140px;
+  top: 100%;
+  left: 0;
+}
+.sub li{
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub li a{
+  color: #474747;
+  font-size: 14px;
+  font-weight: 500;
+}
+.sub li:hover a{color: crimson;}
+
+/* 100% 서브배경박스 */
+.sub_bgbox{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: rgb(255, 255, 255, 0.8);
+}
+
+/* Main Visual */
+#main_visual {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Slider Layout */
+#main_visual .slide{
+  width: 100%;
+  height: 100vh;
+  height: calc(100vh - 150px);
+  position: relative;
+  margin-top: 70px;
+}
+#main_visual .slide .slide-items {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  display: flex;
+}
+#main_visual .slide .slide-items li{
+	width: 100%;
+	height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../image/main3.png) no-repeat center/cover;
+}
+#main_visual .slide-items li.visual_1{background: url(../image/main3.png);}
+#main_visual .slide-items li.visual_2{background: url(../image/autumn1.png);}
+#main_visual .slide-items li.visual_3{background: url(../image/summer3.png);}
+#main_visual .slide-items li.visual_4{background: url(../image/autumn8.png);}
+
+#main_visual .slide-items .caption{
+  position: relative;
+  top: -100px;
+  left: 300px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 0px 2px rgb(255, 255, 255, 0.3);
+}
+#main_visual .slide-items h2:first-child{
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px;
+}
+#main_visual .slide-items h2:last-child{
+  font-family: GmS_M, sans-serif;
+  font-size: 40px;
+}
+
+/* Control */
+#main_visual .control {
+  position: absolute;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  background-color: rgba(112, 112, 112, 0.5);
+  color: #fff;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+	display: flex; 
+}
+#main_visual .prev, .next{font-weight: bold;}
+#main_visual .control .page{
+	font-size: 15px;
+	padding: 0 10px;
+}
+
+#main_visual .play-stop{
+  width: 20px;
+  height: 20px;
+  position: relative;  
+}
+#main_visual .play, .stop{
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+/*주메뉴별 바뀌는 서브페이지의 탑배경이미지*/
+#about .sheader{background: url(../image/spring1.png) no-repeat center/cover fixed;}
+#education .sheader{background: url(../image/summer3.png) no-repeat center/cover fixed;}
+#gallery .sheader{background: url(../image/autumn5.png) no-repeat center/cover fixed;}
+#notice .sheader{background: url(../image/summer2.png) no-repeat center/cover fixed;}
+
+.sheader_container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.sheader_container h2{
+  font-family: GmS_B, sans-serif;
+  font-size: 40px;
+  color: #fff;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sheader {
+  width: inherit;
+  height: inherit;
+  animation: scaleAnimation 0.8s ease forwards;
+  position: absolute;
+  z-index: -900;
+}
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* location 표시 */
+.location{
+  padding: 20px;
+  color: #666;
+}
+.smenu ul li{
+  margin: 0 40px;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  line-height: 42px;
+}
+.smenu ul li:hover{
+  color:rgb(193, 63, 46);
+}
+.smenu ul .active{
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #eee;
+}
